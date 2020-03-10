@@ -1,15 +1,15 @@
 import numpy as np
 
-PREDICTIONS = {'bird': {'order': 1,
-                        'genus': 2,
-                        'species': 5},
-               'insect': {'order': 1,
-                          'family': 2,
-                          'genus': 2,
-                          'species': 5},
-               'reptile': {'class': 1,
-                           'family': 1,
-                           'species': 5}}
+PREDICTIONS = {"bird": {"order": 1,
+                        "genus": 2,
+                        "species": 5},
+               "insect": {"order": 1,
+                          "family": 2,
+                          "genus": 2,
+                          "species": 5},
+               "reptile": {"class": 1,
+                           "family": 1,
+                           "species": 5}}
 
 
 def output(pred, animal, level):

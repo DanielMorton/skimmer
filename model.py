@@ -1,16 +1,17 @@
 from tensorflow.keras.models import load_model
+from efficientnet.tfkeras import *
 
-ANIMALS = ['birds', 'insects', 'reptiles']
+ANIMALS = ["bird", "insect", "reptile"]
 LEVELS = ["class", "order", "family", "genus", "species"]
-MODEL_FILE = "./models{animal}/enetB{size}_{level}.h5"
+MODEL_FILE = "./models/{animal}/enetB{size}_{level}.h5"
 
 
 def get_animal(args):
-    return [a for a in ANIMALS if a in args][0]
+    return [a for a in ANIMALS if args[a]][0]
 
 
 def get_level(args):
-    return [l for l in LEVELS if l in args][0]
+    return [l for l in LEVELS if args[l]][0]
 
 
 def get_model(args):
@@ -19,4 +20,5 @@ def get_model(args):
     size = args["enet"]
     return animal, level, load_model(MODEL_FILE.format(animal=animal,
                                                        level=level,
-                                                       size=size))
+                                                       size=size),
+                                     compile=False)

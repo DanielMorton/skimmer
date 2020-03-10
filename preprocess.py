@@ -1,9 +1,11 @@
 import numpy as np
 import cv2
 
+from efficientnet.tfkeras import preprocess_input
+
 
 def read_image(img_file):
-    return square_crop(cv2.imread(img_file, cv2.COLOR_BGR2RGB))
+    return preprocess_input(square_crop(cv2.imread(img_file, cv2.COLOR_BGR2RGB)))
 
 
 def square_crop(img, size=448):

@@ -1,4 +1,6 @@
 import argparse
+import os
+
 from output import output
 from prediction import predict
 
@@ -6,6 +8,7 @@ STORE_TRUE = "store_true"
 
 
 def main():
+    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
     ap = argparse.ArgumentParser()
     ap.add_argument("-n", "--name", required=True, type=str,
                     help="Name of image file")
@@ -16,7 +19,7 @@ def main():
                               help="Identify Insect")
     animal_group.add_argument("-b", "--bird", action=STORE_TRUE,
                               help="Identify Bird")
-    animal_group.add_argument("-r", "reptile", action=STORE_TRUE,
+    animal_group.add_argument("-r", "--reptile", action=STORE_TRUE,
                               help="Identify Reptile or Amphibian")
     animal_level = ap.add_mutually_exclusive_group(required=True)
     animal_level.add_argument("-c", "--class", action=STORE_TRUE,
