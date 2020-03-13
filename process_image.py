@@ -2,8 +2,9 @@ import argparse
 import os
 
 from output import output
-from prediction import predict_image
-from . import STORE_TRUE
+from prediction.prediction import predict_image
+
+STORE_TRUE = "store_true"
 
 
 def main():

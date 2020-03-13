@@ -1,7 +1,10 @@
 import argparse
 import os
 
-from . import STORE_TRUE
+from output import save_output
+from prediction.prediction import predict_directory
+
+STORE_TRUE = "store_true"
 
 
 def main():
@@ -29,6 +32,9 @@ def main():
                               help="Make a genus level ID")
     animal_level.add_argument("-s", "--species", action=STORE_TRUE,
                               help="Make a species level ID")
+    args = vars(ap.parse_args())
+    pred = predict_directory(args)
+    save_output(pred, f"{args['directory']}.csv")
 
 
 if __name__ == '__main__':

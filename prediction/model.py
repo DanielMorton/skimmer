@@ -1,10 +1,10 @@
 from tensorflow.keras.models import load_model
 from efficientnet.tfkeras import *
-from . import ANIMALS, LEVELS, MODEL_FILE
+from . import ANIMAL_MAP, LEVELS, MODEL_FILE
 
 
 def get_animal(args):
-    return [a for a in ANIMALS if args[a]][0]
+    return [a for a in ANIMAL_MAP.keys() if args[a]][0]
 
 
 def get_level(args):

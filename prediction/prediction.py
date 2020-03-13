@@ -6,7 +6,8 @@ import os
 from datetime import datetime
 from .model import get_model
 from .preprocess import read_image
-from . import ANIMAL_MAP, CATEGORY_FILE, ORDINALS, PREDICTIONS
+from . import PREDICTIONS
+from . import ANIMAL_MAP, CATEGORY_FILE, ORDINALS
 
 
 def pred_dict(animal, level):
