@@ -20,22 +20,22 @@ def pred_dict(animal, level):
     return pd
 
 
-def print_prediction_time(pred_time):
+def print_prediction_time(pred_time, image_count):
     time_string = ""
     hours = pred_time.seconds // 3600
     minutes = (pred_time.seconds % 3600) // 60
     seconds = pred_time.seconds % 60
     if hours > 1:
-        time_string += f"{hours} hours,"
+        time_string += f"{hours} hours, "
     elif hours == 1:
-        time_string += "1 hour,"
+        time_string += "1 hour, "
 
     if minutes > 1:
-        time_string += f"{minutes} minutes,"
+        time_string += f"{minutes} minutes, "
     elif minutes == 1:
-        time_string += f"1 minutes,"
+        time_string += f"1 minute, "
     elif hours > 0:
-        time_string += f"0 minutes,"
+        time_string += f"0 minutes, "
 
     if seconds > 1:
         time_string += f"{seconds} seconds."
@@ -44,7 +44,11 @@ def print_prediction_time(pred_time):
     elif hours > 0 or minutes > 0:
         time_string += f"0 seconds."
 
-    print(pred_time)
+    print(f"Processed {image_count} images in {time_string}")
+    if image_count/pred_time.seconds > 1:
+        print(f"Processing Rate: {np.round(image_count/pred_time.seconds, 2)} images per second.")
+    else:
+        print(f"Time per image: {np.round(pred_time.seconds/image_count, 2)} seconds per image.")
 
 
 def predict_directory(args):
@@ -66,7 +70,7 @@ def predict_directory(args):
             predictions[f"{ORDINALS[n]} Score"].append(pred[n])
 
     end = datetime.now()
-    print_prediction_time(end - start)
+    print_prediction_time(end - start, len(images))
     return pd.DataFrame(predictions)
 
 
