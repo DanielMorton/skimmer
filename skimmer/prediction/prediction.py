@@ -6,8 +6,7 @@ import os
 from datetime import datetime
 from .model import get_model
 from .preprocess import read_image
-from . import PREDICTIONS
-from . import ANIMAL_MAP, CATEGORY_FILE, ORDINALS
+from .config import ANIMAL_MAP, CATEGORY_FILE, ORDINALS, PREDICTIONS
 
 
 def pred_dict(animal, level):
@@ -53,13 +52,21 @@ def print_prediction_time(pred_time, image_count):
 
 def predict_directory(args):
     directory = args["directory"]
+
+    print(f"Read images from {directory}...")
     images = [f for f in os.listdir(directory) if '.jpg' in f]
+
+    print("Loading Model...")
     animal, level, model = get_model(args)
+
+    print("Load Species Data...")
     categories = pd.read_csv(CATEGORY_FILE)
     categories = categories[categories["class"].isin(ANIMAL_MAP[animal])][level].unique()
     num_preds = PREDICTIONS[animal][level]
     predictions = pred_dict(animal, level)
     start = datetime.now()
+
+    print("Making Predictions...")
     for f in images:
         img = read_image(f"{directory}/{f}")
         pred = pd.Series(model.predict(img[np.newaxis, ...])[0],

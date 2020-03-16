@@ -1,6 +1,7 @@
 from tensorflow.keras.models import load_model
 from efficientnet.tfkeras import *
-from . import ANIMAL_MAP, LEVELS, MODEL_FILE
+from .config import ANIMAL_MAP, LEVELS, MODEL_FILE
+import os
 
 
 def get_animal(args):
@@ -15,6 +16,7 @@ def get_model(args):
     animal = get_animal(args)
     level = get_level(args)
     size = args["enet"]
+    print(os.getcwd())
     return animal, level, load_model(MODEL_FILE.format(animal=animal,
                                                        level=level,
                                                        size=size),

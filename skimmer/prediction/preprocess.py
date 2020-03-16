@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 from efficientnet.tfkeras import preprocess_input
-from . import IMG_SIZE
+from .config import IMG_SIZE
 
 
 def read_image(img_file):

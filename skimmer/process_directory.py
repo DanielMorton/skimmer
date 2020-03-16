@@ -2,7 +2,7 @@ import argparse
 import os
 
 from output import save_output
-from prediction.prediction import predict_directory
+from prediction import predict_directory
 
 STORE_TRUE = "store_true"
 
