@@ -4,7 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 source ${DIR}/docker_env.sh
 
-while [ "$1" != "" ]; do
+while [[ "$1" != "" ]]; do
     case $1 in
         -b|-i|-r|--bird|--insect|--reptile)
             SKIMMER_ARGS="$SKIMMER_ARGS $1"
