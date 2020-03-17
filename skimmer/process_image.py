@@ -1,8 +1,8 @@
 import argparse
 import os
 
-from skimmer.output import output
-from skimmer.prediction import predict_image
+from output import output
+from prediction import predict_image
 
 STORE_TRUE = "store_true"
 
