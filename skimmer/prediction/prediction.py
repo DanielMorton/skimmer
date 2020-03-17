@@ -51,7 +51,7 @@ def print_prediction_time(pred_time, image_count):
 
 
 def predict_directory(args):
-    directory = args["directory"]
+    directory = "images"
 
     print(f"Read images from {directory}...")
     images = [f for f in os.listdir(directory) if '.jpg' in f]

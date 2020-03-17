@@ -10,10 +10,10 @@ STORE_TRUE = "store_true"
 def main():
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
     ap = argparse.ArgumentParser()
-    ap.add_argument("-d", "--directory", required=True, type=str,
-                    help="Name of image directory")
     ap.add_argument("-e", "--enet", required=True, type=int,
                     help="Size of EfficientNet")
+    ap.add_argument("--output",required=False, type=str,
+                    help="Optional output file name.")
     animal_group = ap.add_mutually_exclusive_group(required=True)
     animal_group.add_argument("-i", "--insect", action=STORE_TRUE,
                               help="Identify Insect")
@@ -34,7 +34,10 @@ def main():
                               help="Make a species level ID")
     args = vars(ap.parse_args())
     pred = predict_directory(args)
-    save_output(pred, f"{args['directory']}.csv")
+    if args["output"]:
+        save_output(pred, f"{args['output']}")
+    else:
+        save_output(pred, f"output.csv")
 
 
 if __name__ == '__main__':
