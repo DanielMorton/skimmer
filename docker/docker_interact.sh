@@ -4,4 +4,4 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 source $DIR/docker_env.sh
 
-docker run -it --entrypoint /bin/bash $DOCKER_IMAGE_NAME
+docker run -it --entrypoint /bin/bash --name $DOCKER_CONTAINER_NAME $DOCKER_IMAGE_NAME
