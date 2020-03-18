@@ -1,15 +1,30 @@
 from tensorflow.keras.models import load_model
 from efficientnet.tfkeras import *
 from .config import ANIMAL_MAP, LEVELS, MODEL_FILE
-import os
 
 
 def get_animal(args):
-    return [a for a in ANIMAL_MAP.keys() if args[a]][0]
+    try:
+        animals = [a for a in ANIMAL_MAP.keys() if args[a]]
+        if len(animals) != 1:
+            raise
+        else:
+            return animals[0]
+    except Exception as e:
+        print(e)
+        raise
 
 
 def get_level(args):
-    return [l for l in LEVELS if args[l]][0]
+    try:
+        levels = [l for l in LEVELS if args[l]]
+        if len(levels) != 1:
+            raise
+        else:
+            return levels[0]
+    except Exception as e:
+        print(e)
+        raise
 
 
 def get_model(args):
