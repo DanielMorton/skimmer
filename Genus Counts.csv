@@ -1,0 +1,26 @@
+Kingdom,Phylum,Class,Order,Family,Genus,Image Count,Species Count
+Animal,Arthropods,Insects,Coleoptera (Beetles),Carabidae (Ground Beetles),Cicindela,2007,11
+,,,"Hymenoptera (Wasps, Bees, Ants)",Apidae (Bees),Bombus,5540,25
+,,,,Vespidae (Wasps),Polistes,3371,14
+,,,Lepidoptera (Butterflies and Moths),Nymphalidae (Brush-footed Butterfly),Junonia,2273,11
+,,,,Papilionidae (Swallowtails),Papilio,7438,23
+,,,Odonata (Dragonflies and Damselflies),Coenagrionidae (Damselflies),Argia,4652,10
+,,,,,Enallagma,3750,10
+,,,,Libellulidae (Dragonfiles),Libellula,5633,15
+,,,,,Orthetrum,1427,10
+,,,,,Sympetrum,4690,12
+,Chordata  (Vertebrates),Amphibians,Anura (Frogs),Ranidae (True Frogs),Lithobates,3882,10
+,,Birds,Accipitriformes (Raptors),Accipitridae (Raptors),Buteo,4462,10
+,,,Charadriiformes (Shorebirds),"Charadriidae (Plovers, etc.)",Charadrius,3603,11
+,,,,"Laridae (Gulls, etc.)",Larus,6753,15
+,,,,Scolopacidae (Sandpipers),Calidris,5041,14
+,,,,,Tringa,3894,11
+,,,Passeriformes (Songbirds),Corvidae (Crows),Corvus,3985,12
+,,,,Icteridae (Orioles),Icterus,3839,10
+,,,,Parulidae (Warblers),Setophaga,8991,22
+,,,,Turdidae (Thrushes),Turdus,3707,11
+,,,,Vireonidae (Vireos),Vireo,3214,10
+,,Reptiles,Squamata (Snakes and Lizards),Colubridae (Snakes),Thamnophis,3451,10
+,,,,Phrynosomatidae (Horned Lizards),Sceloporus,6810,18
+,,,,Viperidae (Vipers),Crotalus,4135,11
+Fungus,Basidiomycota,Agaricomycetes,Agaricales,Amanitaceae,Amanita,2248,12
